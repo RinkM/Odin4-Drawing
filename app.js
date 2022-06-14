@@ -6,7 +6,7 @@ const workspace = document.querySelector('.workspace')
 let rowArray =[];
 let boxArray = [];
 let box;
-
+let size = 40
 
 // workspace.appendChild(box)
 
@@ -19,20 +19,20 @@ const row = document.createElement("div")
 workspace.style.display = "block"
 // row.style.display = "inline"
 
-let height = 360/16
-let width = 360/16
+let height = 360/size
+let width = 360/size
 
 // row.classList.add ("row")
 // box.classList.add ("box")
 
 // row.appendChild(box)
 
-for (let i = 0; i <=15; i++){
+for (let i = 0; i <=(size-1); i++){
     rowArray[i] = document.createElement("div")
     rowArray[i].style.display = "flex"
     rowArray[i].classList.add ("row")
     // rowArray[i].style.height = `${height}px`
-    for (let x = 0; x <=15; x++){
+    for (let x = 0; x <=(size-1); x++){
         boxArray[x] = document.createElement("div")
         boxArray[x].classList.add ("box")
         // rowArray[i] = document.createElement("div")
@@ -53,12 +53,26 @@ for (let i = 0; i <=15; i++){
 box = document.querySelectorAll(".box")
 // box.addEventListener("click", myFunction)
 
+const clearButton = document.querySelector('.clear');
+
+
+
 for (const square of box){
-    square.addEventListener('onlick', colorChange(square),true)
-}
+    square.addEventListener('mouseover',()=>{
+        colorChange(square)},true
+    )}
+
+
+clearButton.addEventListener('click', ()=>{
+    clearColors()});
 
 function colorChange(element){
     element.style.background = "black"
+}
+
+function clearColors(){
+    for (const square of box){
+        square.style.background = "white"}
 }
 
 
