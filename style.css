@@ -1,0 +1,25 @@
+body{
+    
+    border: 1px solid green;
+    padding: 1px;
+}
+
+div{
+    border: 1px solid purple;
+    padding: 1px;
+}
+
+.container{
+    display: flex;
+    height:100%;
+    height: 512px;
+    justify-content:space-around
+}
+
+.leftColumn{    
+}
+
+.workspace{
+    width: 75%;
+    /* height: 75%; */
+}
