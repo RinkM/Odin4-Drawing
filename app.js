@@ -1,93 +1,121 @@
 
-// box.style.background = "blue"
 
-const workspace = document.querySelector('.workspace')
+
+
+const workspace = document.querySelector('.workspace');
+workspace.style.display = "block";
 // workspace.style.display = "flex"
+
 let rowArray =[];
 let boxArray = [];
 let box;
-let size = 40
+const slider = document.querySelector('.slider');
+const sliderOutput = document.querySelector('.gridSize');
+let size = slider.value;
+let color = "black";
+let height;
+let width;
 
-// workspace.appendChild(box)
+const clearButton = document.querySelector('.clear');
+const blackButton = document.querySelector('.black');
+const whiteButton = document.querySelector('.white');
+const redButton = document.querySelector('.red');
+const greenButton = document.querySelector('.green');
+const blueButton = document.querySelector('.blue');
+const recreateGrid = document.querySelector('.recreateGrid');
 
-// box.textContent = "Box!"    
-// let row = workspace.appendChild(document.createElement("div"))
+function buildGrid(size){
+    height = 500/size;
+    width = 500/size;
 
-const row = document.createElement("div")
-// const box = document.createElement("div") 
-// workspace.appendChild(row)
-workspace.style.display = "block"
-// row.style.display = "inline"
+    for (let i = 0; i <=(size-1); i++){
+        rowArray[i] = document.createElement("div")
+        rowArray[i].style.display = "flex"
+        rowArray[i].classList.add ("row")
+        // rowArray[i].style.height = `${height}px`
+        for (let x = 0; x <=(size-1); x++){
+            boxArray[x] = document.createElement("div")
+            boxArray[x].classList.add ("box")
+            // rowArray[i] = document.createElement("div")
+            // box.style.width = `${width}px`
+            rowArray[i].appendChild(boxArray[x])
+            boxArray[x].style.height = `${height}px`
+            boxArray[x].style.width = `${width}px`
+        }
 
-let height = 360/size
-let width = 360/size
-
-// row.classList.add ("row")
-// box.classList.add ("box")
-
-// row.appendChild(box)
-
-for (let i = 0; i <=(size-1); i++){
-    rowArray[i] = document.createElement("div")
-    rowArray[i].style.display = "flex"
-    rowArray[i].classList.add ("row")
-    // rowArray[i].style.height = `${height}px`
-    for (let x = 0; x <=(size-1); x++){
-        boxArray[x] = document.createElement("div")
-        boxArray[x].classList.add ("box")
-        // rowArray[i] = document.createElement("div")
-        // box.style.width = `${width}px`
-        rowArray[i].appendChild(boxArray[x])
-        boxArray[x].style.height = `${height}px`
-        boxArray[x].style.width = `${width}px`
+        workspace.appendChild(rowArray[i])
+        // box.classList.add ("box")
     }
-    
 
+    box = document.querySelectorAll(".box")
 
+    for (const square of box){
+        square.addEventListener('mouseover',()=>{
+            colorChange(square)},true
+        )}
 
-    workspace.appendChild(rowArray[i])
-    // box.classList.add ("box")
 }
 
 
-box = document.querySelectorAll(".box")
+
+
+
 // box.addEventListener("click", myFunction)
 
-const clearButton = document.querySelector('.clear');
 
 
-
-for (const square of box){
-    square.addEventListener('mouseover',()=>{
-        colorChange(square)},true
-    )}
-
+recreateGrid.addEventListener('click', ()=>{
+    while(workspace.firstChild)
+        {workspace.removeChild(workspace.firstChild)}
+    buildGrid(size)});
 
 clearButton.addEventListener('click', ()=>{
     clearColors()});
 
+blackButton.addEventListener('click', ()=>{
+    color = "black"});
+
+whiteButton.addEventListener('click', ()=>{
+    color = "white"});
+
+redButton.addEventListener('click', ()=>{
+    color = "red"});
+
+greenButton.addEventListener('click', ()=>{
+    color = "green"});
+
+blueButton.addEventListener('click', ()=>{
+    color = "blue"});
+
+
+
+
+
+
+
+// color = 
+// red rgb(255, 0, 0)
+// green rgb(0, 180, 0)
+// blue rgb(0, 0, 255)
+// white rgb(255, 255, 255)
+// black rgb(0, 0, 0)
+
 function colorChange(element){
-    element.style.background = "black"
+    element.style.background = color
 }
 
 function clearColors(){
     for (const square of box){
         square.style.background = "white"}
+    }
+
+
+buildGrid(size)
+
+
+sliderOutput.innerHTML = slider.value;
+
+slider.oninput = function() {
+    sliderOutput.innerHTML = this.value;
+    size = this.value;
 }
-
-
-
-
-// for (let x = 0; x <=16; x++){
-//     rowArray[i][boxArray[x]] = document.createElement("div")
-//     boxArray[x].style.width = `${width}px`
-//     rowArray[i].appendChild(boxArray[x])
-// }
-    
-    
-    // for (let i = 0; i <=16; i++){
-        // console.log("Print")
-        // document.createElement("div")
-        
-    // }
-    // workspace.appendChild(document.createElement("div"))

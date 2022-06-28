@@ -10,13 +10,30 @@
 <body>
 
     <header>
-        <div class = "title">Etch A Sketch Header
+        <div class = "title">Title : Etch A Sketch
         </div>
     </header>
     <div class = "container">
-        <div class = "leftColumn">Left Column</div>
-        <button class = "clear">Clear Space</button>
-        <div class = "workspace"></div>
+        <div class = "leftColumn">Left Column
+            <div>
+
+                <input type="range" class="slider" name="gridSize"
+                    min="2" max="100" value ="5">
+                <label for="gridSize">Grid Size</label>
+                <p>Value: <span class="gridSize"></span></p>
+                <button class = "recreateGrid">Recreate Grid</button>
+            </div>
+            <button class = "clear">Clear All</button>
+            <button class = "black">Black</button>
+            <button class = "white">White</button>
+            <button class = "red">Red</button>
+            <button class = "blue">Blue</button>
+            <button class = "green">Green</button>
+
+            
+        </div>
+        <div class = "workspace">
+        </div>
     </div>
     
 </body>
