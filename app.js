@@ -119,3 +119,41 @@ slider.oninput = function() {
     sliderOutput.innerHTML = this.value;
     size = this.value;
 }
+
+
+const knob = document.querySelector('.knob');
+
+function calculateDegree(e){
+    const x1 = window.innerWidth/5;
+    const y1 = window.innerHeight/5;
+    const x2 = e.clientX;
+    const y2 = e.clientY;
+
+    const deltaX = x1 - x2;
+    const deltaY = y1 - y2;
+
+    // console.log("x1,x2:" + [x1,x2])
+    // console.log("y1,y2:" + [y1,y2])
+    const rad = Math.atan2(deltaY,deltaX);
+    let deg = rad *(180/Math.PI);
+    // console.log(deg);
+    return deg;
+
+}
+
+knob.addEventListener("mousedown",function() {
+    knob.addEventListener("mousemove", rotate);
+        function rotate(e){
+            // console.log(e)
+            const result = Math.floor(calculateDegree(e));
+            knob.style.transform = `rotate(${result}deg)`;
+            console.log(knob.style.transform)
+        }
+        knob.addEventListener("mouseup", function(){
+            knob.removeEventListener("mousemove", rotate);
+        });
+});
+
+
+
+
