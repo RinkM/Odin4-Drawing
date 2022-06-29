@@ -9,45 +9,63 @@
 </head>
 <body>
 
-    <header>
-        <div class = "title">Title : Etch A Sketch
-        </div>
-    </header>
-    <div class = "container">
-        <div class = "leftColumn">Left Column
-            <div>
-                <input type="range" class="slider" name="gridSize"
-                    min="2" max="100" value ="5">
-                <label for="gridSize">Grid Size</label>
-                <p>Value: <span class="gridSize"></span></p>
-                <button class = "recreateGrid">Recreate Canvas</button>
+    
+    <div class = "redFrame">
+        <header>
+            <div class = "title">Title : Etch A Sketch
             </div>
-            <button class = "clear">Clear Canvas</button>
-            <button class = "black">Black</button>
-            <button class = "white">White</button>
-            <button class = "red">Red</button>
-            <button class = "blue">Blue</button>
-            <button class = "green">Green</button>
-            <div>
-            <p>Directions:</p> 
-            Use the slider to control the size of the canvas. Click "Recreate Canvas".
+        </header>
+        <!-- <div class = "redFrame"> -->
+            <div class = "workspace">
+            </div>
+
+            <div class = "dial sliderLeft">
+                <div class = "knob">
+                    <p id="screen-log"></p>
+                </div>
+            </div>
+
+            <div class = "dial sliderRight">
+                <div class = "knob">
+                    <p id="screen-log"></p>
+                </div>
+            </div>
+
+    </div>
+
+
+    <div class = "leftColumn">Left Column
+        <div>
+            <input type="range" class="slider" name="gridSize"
+                min="2" max="100" value ="5">
+            <label for="gridSize">Grid Size</label>
+            <p>Value: <span class="gridSize"></span></p>
+            <button class = "recreateGrid">Recreate Canvas</button>
+        </div>
+        <button class = "clear">Clear Canvas</button>
+        <button class = "black">Black</button>
+        <button class = "white">White</button>
+        <button class = "red">Red</button>
+        <button class = "blue">Blue</button>
+        <button class = "green">Green</button>
+        <div>
+        <p>Directions:</p> 
+        Use the slider to control the size of the canvas. Click "Recreate Canvas".
+        
+        <p>Move your mouse over the grid space to draw.</p>
+
+        <p>Change colors by clicking the appropriate button.</p>
+        </div>
+
+
+
+    </div>
+
+
+
             
-            <p>Move your mouse over the grid space to draw.</p>
+        
 
-            <p>Change colors by clicking the appropriate button.</p>
-            </div>
-
-            <div class = "slider2">
-                <div class = "knob"> </div>
-
-            </div>
-
-
-
-            
-        </div>
-        <div class = "workspace">
-        </div>
 
     </div>
     

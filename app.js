@@ -16,6 +16,9 @@ let color = "black";
 let height;
 let width;
 
+let workspaceHeight = workspace.clientHeight;
+let workspaceWidth = workspace.clientWidth;
+
 const clearButton = document.querySelector('.clear');
 const blackButton = document.querySelector('.black');
 const whiteButton = document.querySelector('.white');
@@ -25,8 +28,8 @@ const blueButton = document.querySelector('.blue');
 const recreateGrid = document.querySelector('.recreateGrid');
 
 function buildGrid(size){
-    height = 500/size;
-    width = 500/size;
+    height =workspaceHeight /size;
+    width = workspaceWidth /size;
 
     for (let i = 0; i <=(size-1); i++){
         rowArray[i] = document.createElement("div")
@@ -47,11 +50,18 @@ function buildGrid(size){
         // box.classList.add ("box")
     }
 
-    box = document.querySelectorAll(".box")
+    boxArray = document.querySelectorAll(".box")
+    // box.style.background = "grey"
 
-    for (const square of box){
-        square.addEventListener('mouseover',()=>{
-            colorChange(square)},true
+
+    for (const box of boxArray){
+        box.addEventListener('mouseover',()=>{
+            colorChange(box)},true
+        )}
+
+    for (const box of boxArray){
+        box.addEventListener('mouseover',()=>{
+            colorChange(box)},true
         )}
 
 }
@@ -105,7 +115,7 @@ function colorChange(element){
 }
 
 function clearColors(){
-    for (const square of box){
+    for (const square of boxArray){
         square.style.background = "white"}
     }
 
@@ -124,15 +134,16 @@ slider.oninput = function() {
 const knob = document.querySelector('.knob');
 
 function calculateDegree(e){
-    const x1 = window.innerWidth/5;
-    const y1 = window.innerHeight/5;
+    const x1 = window.innerWidth/2;
+    const y1 = window.innerHeight/2;
     const x2 = e.clientX;
     const y2 = e.clientY;
+    
 
     const deltaX = x1 - x2;
     const deltaY = y1 - y2;
-
-    // console.log("x1,x2:" + [x1,x2])
+    console.log(x3)
+    // console.log("x2:" + x2)
     // console.log("y1,y2:" + [y1,y2])
     const rad = Math.atan2(deltaY,deltaX);
     let deg = rad *(180/Math.PI);
@@ -147,12 +158,23 @@ knob.addEventListener("mousedown",function() {
             // console.log(e)
             const result = Math.floor(calculateDegree(e));
             knob.style.transform = `rotate(${result}deg)`;
-            console.log(knob.style.transform)
+            // console.log(knob.style.transform)
         }
         knob.addEventListener("mouseup", function(){
             knob.removeEventListener("mousemove", rotate);
         });
 });
+
+// let screenLog = document.querySelector('#screen-log');
+// document.addEventListener('mousemove', logKey);
+
+// function logKey(e) {
+//   screenLog.innerText = `
+//     Screen X/Y: ${e.screenX}, ${e.screenY}
+//     Client X/Y: ${e.clientX}, ${e.clientY}
+//     Offset X/Y X/Y: ${knob.offsetX}, ${knob.offsetY}`;
+    
+// }
 
 
 
