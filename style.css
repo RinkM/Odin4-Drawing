@@ -14,6 +14,21 @@ header{
     align-self: center;
     justify-self: center;
 }
+.title{
+    font-family: 'Satisfy', cursive;
+    font-size: 48px;
+    background-image: linear-gradient(180deg, yellow, #aa8c2c);
+    background-clip: text;
+    background-size: 100%;
+    background-repeat: repeat;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    /* text-fill-color: transparent; */
+}
 
 div{
     /* border: 1px solid rgb(0, 128, 0) */
@@ -28,20 +43,8 @@ div{
     grid-template-columns: repeat(8, 1fr );
     grid-template-rows: repeat(6, 1fr);
     border-radius: 20px;
-    /* justify-items: center; */
-    
-}
-/* 
-.container{
-    display: flex;
+} 
 
-    height:100%;
-    height: 512px;
-    justify-content:space-around
-} */
-
-.leftColumn{    
-}
 
 .workspace{
     grid-column: 2 / 8;
@@ -108,8 +111,8 @@ border-radius: 100%;
     
     left:50%;
     transform:translateX(-50%);
-    width: 5%;
-    height: 5%;
+    width: 10px;
+    height: 10px;
     background: orange;
     box-shadow: 0px 0px 10px white;
 }

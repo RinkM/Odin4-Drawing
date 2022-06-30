@@ -1,5 +1,27 @@
 # Notes and Ideas
 
+
+## 6/29
+
+Need to Fix :
+red frame size and workspace size.  the workspace isn't really attached to the red square... 
+workspace.clientWidth is set when the app is opened. Keeps the same value even if the window is resized. This causes some of the resizing issues.
+
+
+the pixels are no longer square.   1.5 ratio difference?  No. maybe.    how to get them square again?
+
+
+the knobs!   use offsetX to find the x value of cursor   use a percentage to 
+x = 0 then rotation  = -90
+x = mid then rotation = 0 
+x = max then rotation = +90
+
+
+
+
+
+## 6/27
+
 What sort of theme?    Use the original etchaskecth theme?
 
 Or a Bob Ross theme?  
