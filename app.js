@@ -8,6 +8,7 @@ workspace.style.display = "block";
 
 let rowArray =[];
 let boxArray = [];
+let allBoxes = [];
 let box;
 const slider = document.querySelector('.slider');
 const sliderOutput = document.querySelector('.gridSize');
@@ -28,56 +29,52 @@ const blueButton = document.querySelector('.blue');
 const recreateGrid = document.querySelector('.recreateGrid');
 
 function buildGrid(size){
-    height =workspaceHeight /size;
-    width = workspaceWidth /size;
+    height = workspaceHeight / size;
+    width = workspaceWidth / size;
 
     for (let i = 0; i <=(size-1); i++){
-        rowArray[i] = document.createElement("div")
-        rowArray[i].style.display = "flex"
-        rowArray[i].classList.add ("row")
-        // rowArray[i].style.height = `${height}px`
+        rowArray[i] = document.createElement("div");
+        rowArray[i].style.display = "flex";
+        rowArray[i].classList.add ("row");
+
         for (let x = 0; x <=(size-1); x++){
-            boxArray[x] = document.createElement("div")
-            boxArray[x].classList.add ("box")
-            // rowArray[i] = document.createElement("div")
-            // box.style.width = `${width}px`
-            rowArray[i].appendChild(boxArray[x])
-            boxArray[x].style.height = `${height}px`
-            boxArray[x].style.width = `${width}px`
+            boxArray[x] = document.createElement("div");
+            boxArray[x].classList.add ("box");
+            rowArray[i].appendChild(boxArray[x]);
+            boxArray[x].style.height = `${height}px`;
+            boxArray[x].style.width = `${width}px`;
         }
 
         workspace.appendChild(rowArray[i])
-        // box.classList.add ("box")
     }
 
-    boxArray = document.querySelectorAll(".box")
+    allBoxes = document.querySelectorAll(".box")
     // box.style.background = "grey"
 
 
-    for (const box of boxArray){
+    for (const box of allBoxes){
         box.addEventListener('mouseover',()=>{
             colorChange(box)},true
         )}
 
-    for (const box of boxArray){
-        box.addEventListener('mouseover',()=>{
-            colorChange(box)},true
-        )}
+    // for (const box of allBoxes){
+    //     box.addEventListener('mouseover',()=>{
+    //         colorChange(box)},true
+    //     )}
 
 }
 
 
-
-
-
 // box.addEventListener("click", myFunction)
-
-
 
 recreateGrid.addEventListener('click', ()=>{
     while(workspace.firstChild)
         {workspace.removeChild(workspace.firstChild)}
-    buildGrid(size)});
+    buildGrid(size)  
+});
+
+
+
 
 clearButton.addEventListener('click', ()=>{
     clearColors()});
@@ -100,27 +97,28 @@ blueButton.addEventListener('click', ()=>{
 
 
 
-
-
-
-// color = 
-// red rgb(255, 0, 0)
-// green rgb(0, 180, 0)
-// blue rgb(0, 0, 255)
-// white rgb(255, 255, 255)
-// black rgb(0, 0, 0)
-
 function colorChange(element){
     element.style.background = color
 }
 
 function clearColors(){
-    for (const square of boxArray){
+    for (const square of allBoxes){
         square.style.background = "white"}
     }
 
-
+console.log(workspace.childNodes)
 buildGrid(size)
+console.log(workspace.childNodes)
+
+
+
+
+
+
+
+
+
+
 
 
 sliderOutput.innerHTML = slider.value;
@@ -142,7 +140,7 @@ function calculateDegree(e){
 
     const deltaX = x1 - x2;
     const deltaY = y1 - y2;
-    console.log(x3)
+    // console.log(x3)
     // console.log("x2:" + x2)
     // console.log("y1,y2:" + [y1,y2])
     const rad = Math.atan2(deltaY,deltaX);
