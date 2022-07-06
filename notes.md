@@ -3,6 +3,11 @@
 Need to clean up the code now.  I think there's a number of loose ends that connect to nothing. 
 Shorten functions.  The thing works, but code is messy.
 
+there's two knoblist event listener functions just floating there.  can I combine into 1?  Do I have to wrap them as a function?
+
+event listeners... can they be wrapped in a function?  Should they?  How do they get called / activated?
+
+
 
 
 
