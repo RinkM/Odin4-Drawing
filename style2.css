@@ -1,11 +1,20 @@
 body{
-    
-    border: 1px solid green;
+    /* font-family: 'Satisfy', cursive; */
+    /* color: yellow; */
+    /* border: 1px solid green; */
     padding: 1px;
     display: block;
     justify-content: center;
     
 
+}
+
+.displaySettings{
+    font-family: 'Pangolin', cursive;
+}
+
+.directions {
+    font-family: 'Pangolin', cursive;
 }
 
 header{
@@ -31,44 +40,71 @@ header{
 }
 
 div{
-    /* border: 1px solid rgb(0, 128, 0) */
-    /* padding: 1px; */
+    /* border: 1px solid rgb(0, 128, 0); */
+    /* margin: -1px; */
+}
+
+body{
+    /* display: flex; */
+    
 }
 
 .redFrame{
     background:red;
-    width: 75%;
-    height: 500px;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr );
-    grid-template-rows: repeat(6, 1fr);
+    width: 25em;
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+/* justify-self: center; */
     border-radius: 20px;
+    padding: 0em 4em;
 } 
 
 
 .workspace{
-    grid-column: 2 / 8;
-    grid-row: 2 / 7 ;
-
-    border: 1px solid rgb(128, 0, 21);
+    justify-self: center;
+    /* border: 1px solid rgb(128, 0, 21); */
     border-radius: 15px;
-    /* width: 500px;
-    height: 500px; */
+    width: 25em;
+    height: 25em;
     background: white;
 }
-.sliderLeft{
+
+.displaySettings{
+    /* border: 1px solid black; */
     display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0 0;}
+
+.colorPicker{
+    width: 4em;
+
 }
+
+
+.controls {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 10px 0;
+}
+
 
 .sliderLeft::before,
 .sliderLeft, .knob{
+    display: flex;
+    /* border: 1px solid green; */
+    grid-column: 1;
+    grid-row: 7;
     justify-self: center;
     /* margin: 20px; */
 }
 
 
 .sliderRight::before,
-.sliderRight, .knob{
+.sliderRight {
+    display: flex;
+    /* border: 1px solid green; */
     grid-column: 8;
     grid-row: 7;
     justify-self: center;
@@ -79,19 +115,20 @@ div{
 .dial::before {
     grid-column: 1;
     grid-row: 6;
-    background:rgb(66, 180, 85);
-    width:1em;
+    background:rgb(255, 255, 255);
+    width:10em;
     height: 10em;
     border-radius: 50%;
-    box-shadow: 0px -20px 20px yellow,
-        0px 20px 35px blue,
+    box-shadow: 
+    /* 0px -20px 20px rgb(240, 240, 217),
+        0px 20px 35px rgb(211, 211, 233), */
         inset 0px 5px 6px #979797,
         inset 0px -5px 6px #242424;
 }
 
 .dial::before, .knob{
-    width: 5em;
-    height: 5em;
+    width: 4em;
+    height: 4em;
     position: relative;
     grid-column: 1;
     grid-row: 6;
@@ -109,12 +146,12 @@ border-radius: 100%;
 /* background changes the dot color, HxW changes size.  */
 .knob::before{
     
-    left:50%;
-    transform:translateX(-50%);
+    /* left:50%; */
+    transform:translateX(1.5em);
     width: 10px;
     height: 10px;
-    background: orange;
-    box-shadow: 0px 0px 10px white;
+    background: rgb(255, 0, 0);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
 /* halo */
@@ -122,9 +159,9 @@ border-radius: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -68%);
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     width:130%;
     height:130%;
-    box-shadow: 0px 0px 10px white,
-        inset 0px 0px 10px white;
+    /* box-shadow: 0px 0px 10px white,
+        inset 0px 0px 10px white; */
 }
