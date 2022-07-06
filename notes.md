@@ -1,4 +1,9 @@
 # Notes and Ideas
+## 7/5
+Need to clean up the code now.  I think there's a number of loose ends that connect to nothing. 
+Shorten functions.  The thing works, but code is messy.
+
+
 
 
 ## 6/29
