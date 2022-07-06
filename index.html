@@ -1,79 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "style2.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pangolin&family=Satisfy&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "style2.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Pangolin&family=Satisfy&display=swap" rel="stylesheet">
+        <title>Etch a Sketch</title>
+    </head>
 
-    <title>Etch a Sketch</title>
-</head>
-<body>
-
-    
-    <div class = "redFrame">
-        <header>
-            <div class = "title">Sketch An Etch
+    <body>
+        <div class = "redFrame">
+            <header>
+                <div class = "title">Sketch An Etch</div>
+            </header>
+            <div class = "workspace"></div>
+            <div class = "displaySettings">
+                <div>Size: <span class="gridSize">5</span></div>
+                <div class = "colorPicker"> <div></div> </div>
             </div>
-        </header>
-        <!-- <div class = "redFrame"> -->
-        <div class = "workspace">
-        </div>
-        <div class = "displaySettings">
-            <div>Size: <span class="gridSize">5</span></div>
-            <div class = "colorPicker"> <div></div> </div>
-            
-        </div>
-
-        <div class = controls>
-
-            <div class = "dial sliderLeft">
-                <div class = "knob">
-                    <p id="screen-log"></p>
-                    
-
+            <div class = controls>
+                <div class = "dial sliderLeft">
+                    <div class = "knob">
+                        <p id="screen-log"></p>
+                    </div>
+                    <button class = "recreateGrid">Shake it up!</button>
                 </div>
-                <button class = "recreateGrid">Shake it up!</button>
-            </div>
-            <div class = "dial sliderRight">
-                
-                <div class = "knob">
-                    <p id="screen-log"></p>
-
+                <div class = "dial sliderRight">
+                    <div class = "knob">
+                        <p id="screen-log"></p>
+                    </div>
                 </div>
-                
             </div>
         </div>
-    </div>
 
-
-    <div class = "leftColumn">
-        <div class = "directions">
-        <h1>Directions:</h1> 
-        
-        <p>Rotate the left dial to control the canvas size. </p>
-        <p>Click "Shake it up!"</p>
-        <p>Rotate the right dial to change the pen color.</p>
-        <p>Move your mouse over the canvas to draw.</p>
-
-        
-        </div>
-
-
-
-    </div>
-
-
-
+        <div class = "leftColumn">
+            <div class = "directions">
+            <h1>Directions:</h1> 
             
-        
-
-
-    </div>
-    
-</body>
-<script src =app.js ></script>
+            <p>Rotate the left dial to control the canvas size. </p>
+            <p>Click "Shake it up!"</p>
+            <p>Rotate the right dial to change the pen color.</p>
+            <p>Move your mouse over the canvas to draw.</p>
+            </div>
+        </div>
+    </body>
+    <script src =app.js ></script>
 </html>
